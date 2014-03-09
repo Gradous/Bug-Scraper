@@ -89,7 +89,8 @@ def write_result(url, results, log):
 		stats = [] # for some averages and whatnot
 		for r in results:
 			logfile.write(url + ',')
-			logfile.write(','.join([d if d is not None else "#None#" for d in r]))
+			logfile.write(','.join([d if d is not None else "#None#" for d in r])\
+			.encode("UTF-8"))
 			logfile.write('\n')
 		logfile.flush()
 		fsync(logfile)
